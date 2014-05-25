@@ -20,7 +20,7 @@ Installation
 You can install urodoz/truncateHTML through [Composer](https://getcomposer.org):
 
 ```shell
-$ composer require urodoz/truncate-html
+$ composer require urodoz/truncate-html:@stable
 ```
 
 Usage
