@@ -1,5 +1,5 @@
 {
-    "name": "urodoz/truncateHTML",
+    "name": "urodoz/truncate-html",
     "type": "library",
     "description": "Handle truncate action on HTML strings",
     "keywords": ["html", "truncating", "shorten", "content", "truncate"],
