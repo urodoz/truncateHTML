@@ -38,7 +38,7 @@ class TruncateExtension extends \Twig_Extension
      *
      * @return \Twig_SimpleFilter[]
      */
-    public function getFilters()
+    public function getFunctions()
     {
         return array(
             "truncateHTML" => new \Twig_Function_Method($this, "truncateHTML"),
