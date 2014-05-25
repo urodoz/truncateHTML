@@ -61,7 +61,7 @@ class AppKernel extends Kernel
 }
 ```
 
-You can now use the `slugify` service everywhere in your application, for example, in your controller:
+You can now use the `urodoz_truncate` service everywhere in your application, for example, in your controller:
 
 ```php
 $truncatedString = $this->get('urodoz_truncate')->truncate($htmlString, 100);
