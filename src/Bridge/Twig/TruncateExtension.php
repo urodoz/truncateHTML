@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file is part of urodoz/truncateHTML.
  *
@@ -41,7 +40,7 @@ class TruncateExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            "truncateHTML" => new \Twig_Function_Method($this, "truncateHTML"),
+            new \Twig_SimpleFunction('truncateHTML', array($this, 'truncateHTML')),
         );
     }
 
@@ -49,7 +48,7 @@ class TruncateExtension extends \Twig_Extension
      * Truncate HTML filter.
      *
      * @param string $string
-     * @param string $separator
+     * @param int    $length
      *
      * @return string
      */

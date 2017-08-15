@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file is part of urodoz/truncateHTML.
  *
@@ -20,23 +19,16 @@ namespace Urodoz\Truncate;
  */
 interface TruncateInterface
 {
-
     /**
      * Truncates the HTML keeping consistency on open/closing HTML tags
      *
      * @param string $text
-     * @param int $length
+     * @param int    $length
      * @param string $ending
-     * @param bool $exact
-     * @param bool $considerHtml
+     * @param bool   $exact
+     * @param bool   $considerHtml
+     *
      * @return string The truncated string
      */
-    public function truncate(
-        $text,
-        $length = 100,
-        $ending = '...',
-        $exact = false,
-        $considerHtml = true
-    );
-
+    public function truncate($text, $length = 100, $ending = '...', $exact = false, $considerHtml = true);
 }
