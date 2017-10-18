@@ -37,7 +37,7 @@ class TruncateService implements TruncateInterface
     public function truncate(
         $text,
         $length = 100,
-        $ending = '...',
+        $ending = '…',
         $exact = false,
         $considerHtml = true
     ) {
