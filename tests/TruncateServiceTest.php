@@ -36,11 +36,11 @@ class TruncateServiceTest extends \PHPUnit_Framework_TestCase
     public function provider()
     {
         return array(
-            array('<p>Hello world!</p>', 10, '<p>Hello...</p>'),
+            array('<p>Hello world!</p>', 10, '<p>Hello…</p>'),
             array('<p>Hello world!</p>', 30, '<p>Hello world!</p>'),
-            array('<p>Hello <b>World!</b> blah blah blah</p>', 20, '<p>Hello <b>World!</b>...</p>'),
-            array('<b>One</b><b>Two</b> <b>Three</b>', 10, '<b>One</b><b>Two</b>...'),
-            array('<p>Hello world! <img src="http://img.test.com/img.jpg" /></p>', 10, '<p>Hello...</p>'),
+            array('<p>Hello <b>World!</b> blah blah blah</p>', 20, '<p>Hello <b>World!</b>…</p>'),
+            array('<b>One</b><b>Two</b> <b>Three</b>', 10, '<b>One</b><b>Two</b>…'),
+            array('<p>Hello world! <img src="http://img.test.com/img.jpg" /></p>', 10, '<p>Hello…</p>'),
             array('<p>Hello world! <img src="http://img.test.com/img.jpg" /></p>', 20, '<p>Hello world! <img src="http://img.test.com/img.jpg" /></p>'),
         );
     }
