@@ -53,9 +53,9 @@ class TruncateExtension extends \Twig_Extension
      *
      * @return string
      */
-    public function truncateHTML($string, $length = 100)
+    public function truncateHTML(...$args)
     {
-        return $this->truncateService->truncate($string, $length);
+        return call_user_func_array([$this->truncateService, 'truncate'], $args);
     }
 
     /**
