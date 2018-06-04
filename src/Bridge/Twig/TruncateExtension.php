@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file is part of urodoz/truncateHTML.
  *
@@ -22,12 +21,16 @@ use Urodoz\Truncate\TruncateInterface;
  */
 class TruncateExtension extends \Twig_Extension
 {
-
     /**
      * @var TruncateInterface
      */
     private $truncateService;
 
+    /**
+     * Constructor
+     *
+     * @param TruncateInterface $truncateService
+     */
     public function __construct(TruncateInterface $truncateService)
     {
         $this->truncateService = $truncateService;
@@ -41,7 +44,7 @@ class TruncateExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            "truncateHTML" => new \Twig_Function_Method($this, "truncateHTML"),
+            new \Twig_SimpleFunction('truncateHTML', array($this, 'truncateHTML')),
         );
     }
 
@@ -49,7 +52,7 @@ class TruncateExtension extends \Twig_Extension
      * Truncate HTML filter.
      *
      * @param string $string
-     * @param string $separator
+     * @param int    $length
      *
      * @return string
      */

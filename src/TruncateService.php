@@ -20,11 +20,10 @@ namespace Urodoz\Truncate;
  */
 class TruncateService implements TruncateInterface
 {
-
     /**
      * Static method to create new instance of {@see Slugify}.
      *
-     * @return Slugify
+     * @return TruncateInterface
      */
     public static function create()
     {
@@ -34,13 +33,10 @@ class TruncateService implements TruncateInterface
     /**
      * @inheritDoc
      */
-    public function truncate(
-        $text,
-        $length = 100,
-        $ending = '...',
-        $exact = false,
-        $considerHtml = true
-    ) {
+    public function truncate($text, $length = 100, $ending = '...', $exact = false, $considerHtml = true)
+    {
+        $open_tags = array();
+        $truncate  = '';
         if ($considerHtml) {
             // if the plain text is shorter than the maximum length, return the whole text
             if (strlen(preg_replace('/<.*?>/', '', $text)) <= $length) {
@@ -49,8 +45,6 @@ class TruncateService implements TruncateInterface
             // splits all html-tags to scanable lines
             preg_match_all('/(<.+?>)?([^<>]*)/s', $text, $lines, PREG_SET_ORDER);
             $total_length = strlen($ending);
-            $open_tags = array();
-            $truncate = '';
             foreach ($lines as $line_matchings) {
                 // if there is any html-tag in this line, handle it and add it (uncounted) to the output
                 if (!empty($line_matchings[1])) {
@@ -129,5 +123,4 @@ class TruncateService implements TruncateInterface
         }
         return $truncate;
     }
-
 }

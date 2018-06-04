@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file is part of urodoz/truncateHTML.
  *
@@ -9,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Urodoz\Truncate;
+namespace Tests\Urodoz\Truncate;
 
 use Urodoz\Truncate\TruncateService;
 
@@ -22,7 +21,6 @@ use Urodoz\Truncate\TruncateService;
  */
 class TruncateServiceTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @var TruncateService
      */
@@ -53,5 +51,4 @@ class TruncateServiceTest extends \PHPUnit_Framework_TestCase
         $truncatedText = $this->truncateService->truncate($htmlString, $length);
         $this->assertEquals($expected, $truncatedText);
     }
-
 }
