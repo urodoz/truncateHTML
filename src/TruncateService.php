@@ -20,7 +20,6 @@ namespace Urodoz\Truncate;
  */
 class TruncateService implements TruncateInterface
 {
-
     /**
      * Static method to create new instance of {@see Slugify}.
      *

@@ -21,12 +21,16 @@ use Urodoz\Truncate\TruncateInterface;
  */
 class TruncateExtension extends \Twig_Extension
 {
-
     /**
      * @var TruncateInterface
      */
     private $truncateService;
 
+    /**
+     * Constructor
+     *
+     * @param TruncateInterface $truncateService
+     */
     public function __construct(TruncateInterface $truncateService)
     {
         $this->truncateService = $truncateService;
