@@ -42,6 +42,9 @@ class TruncateServiceTest extends \PHPUnit_Framework_TestCase
             array('<b>One</b><b>Two</b> <b>Three</b>', 10, '<b>One</b><b>Two</b>...'),
             array('<p>Hello world! <img src="http://img.test.com/img.jpg" /></p>', 10, '<p>Hello...</p>'),
             array('<p>Hello world! <img src="http://img.test.com/img.jpg" /></p>', 20, '<p>Hello world! <img src="http://img.test.com/img.jpg" /></p>'),
+            array('<p>Příliš žluťoučký kůň úpěl ďábelské ódy. <img src="http://img.test.com/img.jpg" /></p>', 10, '<p>Příliš...</p>'),
+            array('<p>Příliš žluťoučký kůň úpěl ďábelské ódy. <img src="http://img.test.com/img.jpg" /></p>', 20, '<p>Příliš žluťoučký...</p>'),
+            array('<p>Příliš žluťoučký kůň úpěl ďábelské ódy. <img src="http://img.test.com/img.jpg" /></p>', 40, '<p>Příliš žluťoučký kůň úpěl ďábelské ódy. <img src="http://img.test.com/img.jpg" /></p>'),
         );
     }
 
